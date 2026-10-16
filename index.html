@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Mochila de los Problemas - Libro Accesible</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Librería PDF.js para procesar el PDF local -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <!-- Librería PageFlip para la animación de libro -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+</head>
+<body>
+
+    <!-- Zona de Lector de Pantalla para accesibilidad -->
+    <div id="screen-reader-announce" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+    <header class="header">
+        <h1>La Mochila de los Problemas</h1>
+        <p>Edición accesible e interactiva</p>
+
+        <!-- Barra de herramientas de accesibilidad y navegación -->
+        <div class="toolbar" role="toolbar" aria-label="Controles de accesibilidad y navegación">
+            <button id="btn-prev" class="btn" aria-label="Página anterior">⏮️ Anterior</button>
+            <span id="page-indicator" class="page-indicator" aria-live="polite">Página 1</span>
+            <button id="btn-next" class="btn" aria-label="Página siguiente">Siguiente ⏭️</button>
+            
+            <div class="divider"></div>
+
+            <button id="btn-tts" class="btn btn-accent" aria-label="Leer en voz alta la página actual">🔊 Leer en Voz Alta</button>
+            <button id="btn-stop-tts" class="btn btn-danger" aria-label="Detener lectura en voz alta" style="display:none;">⏹️ Detener</button>
+
+            <div class="divider"></div>
+
+            <button id="btn-font-increase" class="btn" aria-label="Agrandar tamaño de letra">A+</button>
+            <button id="btn-font-decrease" class="btn" aria-label="Achicar tamaño de letra">A-</button>
+        </div>
+
+        <div id="loading" role="status">Cargando cuento accesible...</div>
+    </header>
+
+    <main class="book-container">
+        <!-- Contenedor interactivo del Flipbook -->
+        <div id="flip-book" class="flip-book"></div>
+    </main>
+
+    <!-- Subtítulo o panel con el texto extraído y redimensionable para baja visión -->
+    <section id="text-accessibility-panel" class="text-panel" aria-label="Texto accesible para baja visión">
+        <h2>Texto de la página actual</h2>
+        <div id="page-text-content" class="page-text-content">
+            Cargando texto de la página...
+        </div>
+    </section>
+
+    <!-- Declaratoria de uso de Inteligencia Artificial Generativa -->
+    <footer class="footer-iag">
+        <hr>
+        <section aria-label="Declaratoria de uso de Inteligencia Artificial Generativa">
+            <h3>🤖 Declaratoria de Uso de IAG</h3>
+            <p>
+                Este recurso educativo accesible ha sido optimizado y enriquecido mediante la utilización de herramientas de 
+                <strong>Inteligencia Artificial Generativa (IAG)</strong> para la maquetación accesible, la extracción de texto, 
+                la lectura por voz sintetizada y la asistencia en el diseño de animaciones de interfaz inclusive.
+            </p>
+        </section>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
